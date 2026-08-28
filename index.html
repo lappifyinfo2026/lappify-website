@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lappify | Sell Your Laptop</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f7f9fc;
+    color: #071d49;
+}
+
+header {
+    background: #061a3a;
+    padding: 16px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.logo span {
+    color: #a9e900;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+
+.hero-text {
+    max-width: 560px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #9be500;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 25px 0;
+    line-height: 1.5;
+}
+
+.tick {
+    margin: 12px 0;
+    font-weight: bold;
+}
+
+.tick span {
+    color: #7fc900;
+    margin-right: 8px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: linear-gradient(90deg,#0877e8,#91d900);
+    color: white;
+    padding: 16px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.laptop {
+    width: 380px;
+    height: 250px;
+    background: linear-gradient(135deg,#0b83ed,#061b40);
+    border-radius: 20px;
+    transform: rotate(-5deg);
+    box-shadow: 0 25px 50px rgba(0,0,0,.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 70px;
+}
+
+.trust {
+    background: #061a3a;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 25px 7%;
+    text-align: center;
+    gap: 15px;
+}
+
+.trust div {
+    padding: 15px;
+}
+
+.trust strong {
+    display: block;
+    color: #a9e900;
+    margin-top: 6px;
+}
+
+.steps {
+    padding: 70px 7%;
+    text-align: center;
+    background: white;
+}
+
+.steps h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.step-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+
+.step {
+    padding: 30px 15px;
+    border-radius: 15px;
+    background: #f5f8fc;
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    margin: auto auto 15px;
+    background: #8bd500;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.calculator {
+    margin: 60px auto;
+    max-width: 1100px;
+    border-radius: 25px;
+    overflow: hidden;
+    background: #061d46;
+    color: white;
+    padding: 45px;
+}
+
+.calculator h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.calculator h2 span {
+    color: #a9e900;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+}
+
+.full {
+    grid-column: 1 / 3;
+}
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    background: white;
+    color: #071d49;
+    border-radius: 12px;
+    display: none;
+    text-align: center;
+}
+
+.result h3 {
+    font-size: 17px;
+}
+
+.price {
+    color: #69a900;
+    font-size: 38px;
+    font-weight: 900;
+    margin: 8px;
+}
+
+footer {
+    background: #04142e;
+    color: white;
+    padding: 45px 7%;
+    text-align: center;
+}
+
+footer .footer-logo {
+    font-size: 32px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+footer span {
+    color: #a9e900;
+}
+
+footer p {
+    margin-top: 12px;
+    color: #c7d1e0;
+}
+
+@media(max-width:800px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 6%;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .laptop {
+        width: 280px;
+        height: 190px;
+        margin-top: 45px;
+    }
+
+    .trust,
+    .step-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .calculator {
+        margin: 35px 15px;
+        padding: 25px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Lappi<span>fy</span>
+</div>
+
+<nav>
+<a href="#">HOME</a>
+<a href="#calculator">SELL</a>
+<a href="#">SERVICE</a>
+<a href="#">UPGRADE</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+SELL YOUR<br>
+<span>LAPTOP</span>
+</h1>
+
+<p>
+Get the best estimated price for your old laptop quickly and easily.
+</p>
+
+<div class="tick">
+<span>✓</span> Instant Price Estimate
+</div>
+
+<div class="tick">
+<span>✓</span> Free Doorstep Pickup
+</div>
+
+<div class="tick">
+<span>✓</span> Fast & Secure Payment
+</div>
+
+<a class="btn" href="#calculator">
+GET MY LAPTOP PRICE →
+</a>
+
+</div>
+
+
+<div class="laptop">
+💻
+</div>
+
+</section>
+
+
+<section class="trust">
+
+<div>
+🛡️
+<strong>TRUSTED SERVICE</strong>
+</div>
+
+<div>
+🏆
+<strong>QUALITY PRODUCTS</strong>
+</div>
+
+<div>
+🔧
+<strong>EXPERT TECHNICIANS</strong>
+</div>
+
+<div>
+🎧
+<strong>AFTER SALES SUPPORT</strong>
+</div>
+
+</section>
+
+
+<section class="steps">
+
+<h2>HOW IT WORKS</h2>
+
+<div class="step-grid">
+
+<div class="step">
+<div class="step-number">1</div>
+<h3>Enter Details</h3>
+<p>Tell us about your laptop</p>
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+<h3>Get Price</h3>
+<p>See your estimated value</p>
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+<h3>Book Pickup</h3>
+<p>Choose your convenient time</p>
+</div>
+
+<div class="step">
+<div class="step-number">4</div>
+<h3>Get Paid</h3>
+<p>Payment after inspection</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="calculator" id="calculator">
+
+<h2>
+CHECK YOUR <span>LAPTOP PRICE</span>
+</h2>
+
+<p>
+Enter your laptop details to get an estimated buyback value.
+</p>
+
+
+<div class="form-grid">
+
+<select id="brand">
+<option value="">Select Brand</option>
+<option value="1">Dell</option>
+<option value="1">HP</option>
+<option value="1">Lenovo</option>
+<option value="1">ASUS</option>
+<option value="1">Acer</option>
+<option value="1">Apple</option>
+</select>
+
+
+<select id="processor">
+<option value="">Select Processor</option>
+<option value="10000">Intel i3</option>
+<option value="15000">Intel i5</option>
+<option value="22000">Intel i7</option>
+<option value="28000">Intel i9</option>
+<option value="18000">Ryzen 5</option>
+<option value="24000">Ryzen 7</option>
+</select>
+
+
+<select id="ram">
+<option value="">Select RAM</option>
+<option value="0">8GB</option>
+<option value="2000">16GB</option>
+<option value="4000">32GB</option>
+</select>
+
+
+<select id="storage">
+<option value="">Select Storage</option>
+<option value="0">256GB SSD</option>
+<option value="2000">512GB SSD</option>
+<option value="4000">1TB SSD</option>
+</select>
+
+
+<select id="year">
+<option value="">Select Year</option>
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+</select>
+
+
+<select id="condition" class="full">
+<option value="">Select Condition</option>
+<option value="1">Excellent</option>
+<option value=".9">Good</option>
+<option value=".75">Average</option>
+<option value=".55">Poor</option>
+</select>
+
+</div>
+
+
+<button class="btn" onclick="calculatePrice()">
+GET ESTIMATED PRICE →
+</button>
+
+
+<div class="result" id="result">
+
+<h3>YOUR ESTIMATED LAPTOP VALUE</h3>
+
+<div class="price" id="price">
+₹0
+</div>
+
+<p>
+Final offer will be confirmed after physical inspection.
+</p>
+
+<button class="btn" onclick="sellLaptop()">
+SELL MY LAPTOP
+</button>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-logo">
+Lappi<span>fy</span>
+</div>
+
+<p>
+Laptop Sales & Service
+</p>
+
+<p>
+Where Trust Meets Technology
+</p>
+
+<p>
+© 2026 Lappify. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<script>
+
+function calculatePrice() {
+
+let processor =
+Number(document.getElementById("processor").value);
+
+let ram =
+Number(document.getElementById("ram").value);
+
+let storage =
+Number(document.getElementById("storage").value);
+
+let year =
+Number(document.getElementById("year").value);
+
+let condition =
+Number(document.getElementById("condition").value);
+
+
+if (!processor || !year || !condition) {
+
+alert("Please select all required details.");
+
+return;
+
+}
+
+
+let basePrice = processor + ram + storage + 5000;
+
+let currentYear = 2026;
+
+let age = currentYear - year;
+
+let ageFactor = 1;
+
+if (age == 1) ageFactor = .85;
+if (age == 2) ageFactor = .70;
+if (age == 3) ageFactor = .55;
+if (age >= 4) ageFactor = .40;
+
+let finalPrice =
+basePrice * ageFactor * condition;
+
+
+finalPrice =
+Math.round(finalPrice / 100) * 100;
+
+
+document.getElementById("price").innerText =
+"₹" + finalPrice.toLocaleString("en-IN");
+
+document.getElementById("result").style.display =
+"block";
+
+}
+
+
+function sellLaptop() {
+
+alert(
+"Great! Your laptop sale request has been started. We will contact you shortly."
+);
+
+}
+
+</script>
+
+</body>
+  </html>
