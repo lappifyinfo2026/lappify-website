@@ -3,292 +3,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Lappify | Sell Your Laptop</title>
+<title>Lappify | Laptop Buyback & Service</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
 }
 
-body {
-    background: #f7f9fc;
-    color: #071d49;
+body{
+  background:#f4f7fb;
+  color:#172033;
 }
 
-header {
-    background: #061a3a;
-    padding: 16px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+header{
+  background:#071d49;
+  color:white;
+  padding:16px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.logo {
-    font-size: 30px;
-    font-weight: 900;
-    font-style: italic;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.logo span {
-    color: #a9e900;
+.brand img{
+  width:55px;
+  height:55px;
+  object-fit:contain;
+  background:white;
+  border-radius:12px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: bold;
+.brand h1{
+  font-size:24px;
 }
 
-.hero {
-    min-height: 570px;
-    padding: 80px 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
+.brand p{
+  font-size:13px;
+  opacity:.9;
 }
 
-.hero-text {
-    max-width: 560px;
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:bold;
 }
 
-.hero h1 {
-    font-size: 60px;
-    line-height: 1;
-    font-weight: 900;
+.hero{
+  background:linear-gradient(135deg,#071d49,#087f5b);
+  color:white;
+  padding:55px 6%;
+  text-align:center;
 }
 
-.hero h1 span {
-    color: #9be500;
+.hero h2{
+  font-size:38px;
+  margin-bottom:12px;
 }
 
-.hero p {
-    font-size: 20px;
-    margin: 25px 0;
-    line-height: 1.5;
+.hero p{
+  font-size:18px;
+  margin-bottom:25px;
 }
 
-.tick {
-    margin: 12px 0;
-    font-weight: bold;
+.btn{
+  border:none;
+  padding:13px 22px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:15px;
 }
 
-.tick span {
-    color: #7fc900;
-    margin-right: 8px;
+.btn-primary{
+  background:#16a34a;
+  color:white;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    background: linear-gradient(90deg,#0877e8,#91d900);
-    color: white;
-    padding: 16px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
+.btn-dark{
+  background:#071d49;
+  color:white;
 }
 
-.laptop {
-    width: 380px;
-    height: 250px;
-    background: linear-gradient(135deg,#0b83ed,#061b40);
-    border-radius: 20px;
-    transform: rotate(-5deg);
-    box-shadow: 0 25px 50px rgba(0,0,0,.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 70px;
+.container{
+  width:92%;
+  max-width:1100px;
+  margin:30px auto;
 }
 
-.trust {
-    background: #061a3a;
-    color: white;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    padding: 25px 7%;
-    text-align: center;
-    gap: 15px;
+.card{
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  margin-bottom:22px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-.trust div {
-    padding: 15px;
+.card h2{
+  margin-bottom:20px;
+  color:#071d49;
 }
 
-.trust strong {
-    display: block;
-    color: #a9e900;
-    margin-top: 6px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
 }
 
-.steps {
-    padding: 70px 7%;
-    text-align: center;
-    background: white;
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
 }
 
-.steps h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
+.field.full{
+  grid-column:1/-1;
 }
 
-.step-grid {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 25px;
+label{
+  font-weight:bold;
+  font-size:14px;
 }
 
-.step {
-    padding: 30px 15px;
-    border-radius: 15px;
-    background: #f5f8fc;
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccd3df;
+  border-radius:8px;
+  background:white;
+  font-size:15px;
 }
 
-.step-number {
-    width: 45px;
-    height: 45px;
-    margin: auto auto 15px;
-    background: #8bd500;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+textarea{
+  min-height:90px;
+  resize:vertical;
 }
 
-.calculator {
-    margin: 60px auto;
-    max-width: 1100px;
-    border-radius: 25px;
-    overflow: hidden;
-    background: #061d46;
-    color: white;
-    padding: 45px;
+.section-title{
+  background:#eef4ff;
+  padding:12px;
+  border-left:5px solid #071d49;
+  margin:20px 0 15px;
+  font-weight:bold;
 }
 
-.calculator h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
+.price-box{
+  background:#071d49;
+  color:white;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+  margin-top:20px;
 }
 
-.calculator h2 span {
-    color: #a9e900;
+.price-box strong{
+  font-size:32px;
+  display:block;
+  margin-top:8px;
 }
 
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-top: 30px;
+.radio-group{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
-select,
-input {
-    width: 100%;
-    padding: 15px;
-    border-radius: 8px;
-    border: none;
-    font-size: 15px;
+.radio{
+  border:1px solid #ccd3df;
+  padding:10px 14px;
+  border-radius:8px;
+  cursor:pointer;
 }
 
-.full {
-    grid-column: 1 / 3;
+.radio input{
+  width:auto;
+  margin-right:6px;
 }
 
-.result {
-    margin-top: 25px;
-    padding: 20px;
-    background: white;
-    color: #071d49;
-    border-radius: 12px;
-    display: none;
-    text-align: center;
+.upload-box{
+  border:2px dashed #b8c2d1;
+  padding:20px;
+  text-align:center;
+  border-radius:10px;
 }
 
-.result h3 {
-    font-size: 17px;
+#signatureCanvas{
+  width:100%;
+  height:180px;
+  border:1px solid #bbb;
+  border-radius:8px;
+  background:white;
+  touch-action:none;
 }
 
-.price {
-    color: #69a900;
-    font-size: 38px;
-    font-weight: 900;
-    margin: 8px;
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
 }
 
-footer {
-    background: #04142e;
-    color: white;
-    padding: 45px 7%;
-    text-align: center;
+.result{
+  display:none;
 }
 
-footer .footer-logo {
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
+.result table{
+  width:100%;
+  border-collapse:collapse;
 }
 
-footer span {
-    color: #a9e900;
+.result td{
+  border-bottom:1px solid #ddd;
+  padding:10px;
 }
 
-footer p {
-    margin-top: 12px;
-    color: #c7d1e0;
+.result td:first-child{
+  font-weight:bold;
+  width:40%;
 }
 
-@media(max-width:800px) {
+.about{
+  line-height:1.7;
+}
 
-    nav {
-        display: none;
-    }
+footer{
+  background:#071d49;
+  color:white;
+  text-align:center;
+  padding:30px 10px;
+  margin-top:40px;
+}
 
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 55px 6%;
-    }
+.social{
+  margin-top:12px;
+}
 
-    .hero h1 {
-        font-size: 44px;
-    }
+.social a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    .laptop {
-        width: 280px;
-        height: 190px;
-        margin-top: 45px;
-    }
+.hidden{
+  display:none;
+}
 
-    .trust,
-    .step-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+@media(max-width:700px){
+  .grid{
+    grid-template-columns:1fr;
+  }
 
-    .calculator {
-        margin: 35px 15px;
-        padding: 25px;
-    }
+  .field.full{
+    grid-column:auto;
+  }
 
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
+  header{
+    flex-direction:column;
+  }
 
-    .full {
-        grid-column: auto;
-    }
+  nav a{
+    margin:0 7px;
+    font-size:13px;
+  }
+
+  .hero h2{
+    font-size:28px;
+  }
 }
 </style>
 </head>
@@ -296,309 +289,975 @@ footer p {
 <body>
 
 <header>
+  <div class="brand">
+    <img src="logo.png" alt="Lappify Logo">
+    <div>
+      <h1>Lappify</h1>
+      <p>Trusted Laptop Buyback & Service</p>
+    </div>
+  </div>
 
-<div class="logo">
-Lappi<span>fy</span>
-</div>
-
-<nav>
-<a href="#">HOME</a>
-<a href="#calculator">SELL</a>
-<a href="#">SERVICE</a>
-<a href="#">UPGRADE</a>
-</nav>
-
+  <nav>
+    <a href="#sell">Sell</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-
 <section class="hero">
+  <h2>Sell Your Laptop With Confidence</h2>
+  <p>Smart Deal & Trusted Service. Better Value.</p>
+  <a href="#sell">
+    <button class="btn btn-primary">Sell My Laptop</button>
+  </a>
+</section>
 
-<div class="hero-text">
+<div class="container">
 
-<h1>
-SELL YOUR<br>
-<span>LAPTOP</span>
-</h1>
+<section id="sell" class="card">
 
-<p>
-Get the best estimated price for your old laptop quickly and easily.
+<h2>💻 Laptop Evaluation</h2>
+
+<div class="section-title">1. Laptop Details</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Brand</label>
+<select id="brand" onchange="brandChanged()">
+<option value="">Select Brand</option>
+<option>Dell</option>
+<option>HP</option>
+<option>Lenovo</option>
+<option>Acer</option>
+<option>Asus</option>
+<option>MSI</option>
+<option>Samsung</option>
+<option>Apple</option>
+<option>Microsoft</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="field">
+<label>Processor</label>
+<select id="processor">
+<option value="">Select Processor</option>
+<option>Intel Core i3</option>
+<option>Intel Core i5</option>
+<option>Intel Core i7</option>
+<option>Intel Core i9</option>
+<option>Intel Core Ultra 5</option>
+<option>Intel Core Ultra 7</option>
+<option>Intel Core Ultra 9</option>
+<option>AMD Ryzen 3</option>
+<option>AMD Ryzen 4</option>
+<option>AMD Ryzen 5</option>
+<option>AMD Ryzen 7</option>
+<option>AMD Ryzen 9</option>
+<option>Apple M1</option>
+<option>Apple M2</option>
+<option>Apple M3</option>
+<option>Apple M4</option>
+<option>Apple M4 Max</option>
+</select>
+</div>
+
+<div class="field">
+<label>Generation / Series</label>
+<select id="generation">
+<option value="">Select Generation</option>
+<option>1st Generation</option>
+<option>2nd Generation</option>
+<option>3rd Generation</option>
+<option>4th Generation</option>
+<option>5th Generation</option>
+<option>6th Generation</option>
+<option>7th Generation</option>
+<option>8th Generation</option>
+<option>9th Generation</option>
+<option>10th Generation</option>
+<option>11th Generation</option>
+<option>12th Generation</option>
+<option>13th Generation</option>
+<option>14th Generation</option>
+<option>Ryzen 3 Series</option>
+<option>Ryzen 4 Series</option>
+<option>Ryzen 5 Series</option>
+</select>
+</div>
+
+<div class="field">
+<label>RAM</label>
+<select id="ram">
+<option value="">Select RAM</option>
+<option>2 GB</option>
+<option>4 GB</option>
+<option>6 GB</option>
+<option>8 GB</option>
+<option>12 GB</option>
+<option>16 GB</option>
+<option>20 GB</option>
+<option>24 GB</option>
+<option>32 GB</option>
+<option>34 GB</option>
+<option>64 GB</option>
+</select>
+</div>
+
+<div class="field full">
+<label>Storage</label>
+<select id="storage">
+<option value="">Select Storage</option>
+<option>128 GB SSD</option>
+<option>250 GB SSD</option>
+<option>256 GB SSD</option>
+<option>320 GB HDD</option>
+<option>350 GB SSD</option>
+<option>500 GB HDD</option>
+<option>512 GB SSD</option>
+<option>1 TB HDD</option>
+<option>1 TB SSD</option>
+<option>2 TB SSD</option>
+<option>500 GB HDD + 120 GB SSD</option>
+<option>1 TB HDD + 125 GB SSD</option>
+<option>1 TB HDD + 256 GB SSD</option>
+<option>1 TB HDD + 512 GB SSD</option>
+</select>
+</div>
+
+<div class="field">
+<label>Warranty / Age</label>
+<select id="warranty">
+<option value="">Select</option>
+<option>Within 1 Year - Under Warranty</option>
+<option>1 to 3 Years - Warranty Not Available</option>
+<option>3 Years Above - Out of Warranty</option>
+</select>
+</div>
+
+<div class="field">
+<label>Laptop Size</label>
+<select id="size">
+<option value="">Select Size</option>
+<option>12 to 13 inch</option>
+<option>14 to 15 inch</option>
+<option>15 inch and above</option>
+</select>
+</div>
+
+</div>
+
+<div class="section-title">2. Graphics</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Graphics Availability</label>
+<select id="graphicsAvailable" onchange="graphicsChanged()">
+<option value="">Select</option>
+<option>Available</option>
+<option>Not Available</option>
+</select>
+</div>
+
+<div class="field">
+<label>Graphics Model</label>
+<select id="graphics">
+<option value="">Select Graphics</option>
+<option>GTX 1650</option>
+<option>RTX 1650</option>
+<option>RTX 2050</option>
+<option>RTX 3050</option>
+<option>RTX 4050</option>
+<option>RTX 5050</option>
+<option>RX 6600</option>
+<option>Other</option>
+</select>
+</div>
+
+</div>
+
+<div class="section-title">3. Physical Checking</div>
+
+<div class="grid">
+
+<div class="field">
+<label>Keyboard</label>
+<select id="keyboard">
+<option>Working</option>
+<option>Not Working</option>
+</select>
+</div>
+
+<div class="field">
+<label>Speaker</label>
+<select id="speaker">
+<option>Working</option>
+<option>Not Working</option>
+</select>
+</div>
+
+<div class="field">
+<label>Wi-Fi</label>
+<select id="wifi">
+<option>Working</option>
+<option>Not Working</option>
+</select>
+</div>
+
+<div class="field">
+<label>Fan</label>
+<select id="fan">
+<option>Working</option>
+<option>Not Working</option>
+</select>
+</div>
+
+<div class="field">
+<label>Screen Patches</label>
+<select id="patches">
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div class="field">
+<label>Keyboard Impression on Screen</label>
+<select id="keyboardImpression">
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div class="field">
+<label>Top / Upper Panel Damage</label>
+<select id="topDamage">
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div class="field">
+<label>Bottom Panel Damage</label>
+<select id="bottomDamage">
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div class="field">
+<label>Screen / Display Condition</label>
+<select id="screenCondition">
+<option>Normal</option>
+<option>Loose</option>
+<option>Loosened</option>
+<option>Damaged</option>
+</select>
+</div>
+
+<div class="field">
+<label>Charger</label>
+<select id="charger">
+<option>Available</option>
+<option>Not Available</option>
+</select>
+</div>
+
+<div class="field">
+<label>Box</label>
+<select id="box">
+<option>Available</option>
+<option>Not Available</option>
+</select>
+</div>
+
+</div>
+
+<div class="section-title">4. Estimated Price</div>
+
+<div class="price-box">
+Estimated Price
+<strong id="estimatedPrice">₹ 0</strong>
+</div>
+
+<div class="actions">
+<button class="btn btn-primary" onclick="calculatePrice()">Calculate Estimated Price</button>
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>👤 Customer Details</h2>
+
+<div class="grid">
+
+<div class="field">
+<label>Customer Name</label>
+<input id="customerName" type="text" placeholder="Enter customer name">
+</div>
+
+<div class="field">
+<label>Mobile Number</label>
+<input id="mobile" type="tel" maxlength="10" placeholder="10 digit mobile number">
+</div>
+
+<div class="field full">
+<label>Address - Required only for Sell / Pickup</label>
+<textarea id="address" placeholder="Enter pickup address"></textarea>
+</div>
+
+</div>
+
+<div class="section-title">Mobile OTP Verification</div>
+
+<div class="actions">
+<button class="btn btn-dark" onclick="sendOTP()">Send OTP</button>
+</div>
+
+<div id="otpArea" class="hidden" style="margin-top:15px">
+
+<div class="field">
+<label>Enter OTP</label>
+<input id="otp" type="text" maxlength="6" placeholder="Enter OTP">
+</div>
+
+<div class="actions">
+<button class="btn btn-primary" onclick="verifyOTP()">Verify OTP</button>
+</div>
+
+<p id="otpMessage" style="margin-top:10px;font-weight:bold;"></p>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>📍 Chennai Pickup</h2>
+
+<div class="grid">
+
+<div class="field">
+<label>Pickup Type</label>
+<select id="pickupType" onchange="pickupChanged()">
+<option>Normal Pickup</option>
+<option>Urgent Pickup</option>
+</select>
+</div>
+
+<div class="field">
+<label>Pickup Date</label>
+<select id="pickupDate"></select>
+</div>
+
+<div class="field full">
+<label>Pickup Slot</label>
+<select id="pickupSlot">
+<option>10:00 AM - 12:00 PM</option>
+<option>12:00 PM - 2:00 PM</option>
+<option>2:00 PM - 4:00 PM</option>
+<option>4:00 PM - 5:00 PM</option>
+</select>
+</div>
+
+</div>
+
+<p style="margin-top:15px;">
+<strong>Service Area:</strong> Chennai only.
+Normal pickup slots are within the selected time window.
 </p>
 
-<div class="tick">
-<span>✓</span> Instant Price Estimate
+</section>
+
+
+<section class="card">
+
+<h2>📄 KYC & Laptop Photos</h2>
+
+<div class="grid">
+
+<div class="field">
+<label>Customer KYC Photo</label>
+<div class="upload-box">
+<input type="file" id="kyc" accept="image/*,.pdf">
+</div>
 </div>
 
-<div class="tick">
-<span>✓</span> Free Doorstep Pickup
+<div class="field">
+<label>Laptop Photos</label>
+<div class="upload-box">
+<input type="file" id="laptopPhotos" accept="image/*" multiple>
+</div>
 </div>
 
-<div class="tick">
-<span>✓</span> Fast & Secure Payment
 </div>
 
-<a class="btn" href="#calculator">
-GET MY LAPTOP PRICE →
+</section>
+
+
+<section class="card">
+
+<h2>✍️ Customer E-Signature</h2>
+
+<p style="margin-bottom:12px;">
+Customer can sign below using mouse or touch.
+</p>
+
+<canvas id="signatureCanvas"></canvas>
+
+<div class="actions">
+<button class="btn btn-dark" onclick="clearSignature()">Clear Signature</button>
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>💰 Final Price & Report</h2>
+
+<div class="grid">
+
+<div class="field">
+<label>Final Price</label>
+<input id="finalPrice" type="number" placeholder="Enter final price">
+</div>
+
+<div class="field">
+<label>Admin Notes</label>
+<textarea id="adminNotes" placeholder="Enter inspection / price variation notes"></textarea>
+</div>
+
+</div>
+
+<div class="actions">
+<button class="btn btn-primary" onclick="generateReport()">Generate Final Report</button>
+<button class="btn btn-dark" onclick="sendWhatsApp()">WhatsApp Customer</button>
+</div>
+
+</section>
+
+
+<section id="report" class="card result">
+
+<h2>📋 Lappify Customer Report</h2>
+
+<table id="reportTable"></table>
+
+<div class="actions">
+<button class="btn btn-dark" onclick="window.print()">Print / Save Report</button>
+</div>
+
+</section>
+
+
+<section id="about" class="card about">
+
+<h2>About Lappify</h2>
+
+<p>
+Lappify is a trusted laptop buyback and service platform focused on providing
+customers with a simple, transparent and convenient way to sell their laptops.
+</p>
+
+<br>
+
+<p>
+With years of experience in the laptop market, we understand the importance
+of giving customers a fair and competitive value based on the actual condition
+and configuration of their device.
+</p>
+
+<br>
+
+<p>
+Our evaluation process considers the laptop brand, processor, generation,
+RAM, storage, warranty status, graphics, physical condition and working
+condition of important components.
+</p>
+
+<br>
+
+<p>
+We also provide convenient pickup support in Chennai, including scheduled
+pickup slots and urgent pickup options for customers who need faster service.
+</p>
+
+<br>
+
+<p>
+Our goal is simple: <strong>Smart Deal & Trusted Service. Better Value.</strong>
+</p>
+
+</section>
+
+
+<section id="contact" class="card">
+
+<h2>📞 Contact Lappify</h2>
+
+<p style="margin-bottom:15px;">
+<strong>Customer Care WhatsApp:</strong> 81222 31183
+</p>
+
+<div class="actions">
+
+<a href="https://wa.me/918122231183" target="_blank">
+<button class="btn btn-primary">WhatsApp Customer Care</button>
+</a>
+
+<a href="https://www.instagram.com/lappifyoffical/" target="_blank">
+<button class="btn btn-dark">Instagram</button>
 </a>
 
 </div>
 
-
-<div class="laptop">
-💻
-</div>
-
 </section>
 
-
-<section class="trust">
-
-<div>
-🛡️
-<strong>TRUSTED SERVICE</strong>
 </div>
-
-<div>
-🏆
-<strong>QUALITY PRODUCTS</strong>
-</div>
-
-<div>
-🔧
-<strong>EXPERT TECHNICIANS</strong>
-</div>
-
-<div>
-🎧
-<strong>AFTER SALES SUPPORT</strong>
-</div>
-
-</section>
-
-
-<section class="steps">
-
-<h2>HOW IT WORKS</h2>
-
-<div class="step-grid">
-
-<div class="step">
-<div class="step-number">1</div>
-<h3>Enter Details</h3>
-<p>Tell us about your laptop</p>
-</div>
-
-<div class="step">
-<div class="step-number">2</div>
-<h3>Get Price</h3>
-<p>See your estimated value</p>
-</div>
-
-<div class="step">
-<div class="step-number">3</div>
-<h3>Book Pickup</h3>
-<p>Choose your convenient time</p>
-</div>
-
-<div class="step">
-<div class="step-number">4</div>
-<h3>Get Paid</h3>
-<p>Payment after inspection</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="calculator" id="calculator">
-
-<h2>
-CHECK YOUR <span>LAPTOP PRICE</span>
-</h2>
-
-<p>
-Enter your laptop details to get an estimated buyback value.
-</p>
-
-
-<div class="form-grid">
-
-<select id="brand">
-<option value="">Select Brand</option>
-<option value="1">Dell</option>
-<option value="1">HP</option>
-<option value="1">Lenovo</option>
-<option value="1">ASUS</option>
-<option value="1">Acer</option>
-<option value="1">Apple</option>
-</select>
-
-
-<select id="processor">
-<option value="">Select Processor</option>
-<option value="10000">Intel i3</option>
-<option value="15000">Intel i5</option>
-<option value="22000">Intel i7</option>
-<option value="28000">Intel i9</option>
-<option value="18000">Ryzen 5</option>
-<option value="24000">Ryzen 7</option>
-</select>
-
-
-<select id="ram">
-<option value="">Select RAM</option>
-<option value="0">8GB</option>
-<option value="2000">16GB</option>
-<option value="4000">32GB</option>
-</select>
-
-
-<select id="storage">
-<option value="">Select Storage</option>
-<option value="0">256GB SSD</option>
-<option value="2000">512GB SSD</option>
-<option value="4000">1TB SSD</option>
-</select>
-
-
-<select id="year">
-<option value="">Select Year</option>
-<option value="2026">2026</option>
-<option value="2025">2025</option>
-<option value="2024">2024</option>
-<option value="2023">2023</option>
-<option value="2022">2022</option>
-<option value="2021">2021</option>
-<option value="2020">2020</option>
-</select>
-
-
-<select id="condition" class="full">
-<option value="">Select Condition</option>
-<option value="1">Excellent</option>
-<option value=".9">Good</option>
-<option value=".75">Average</option>
-<option value=".55">Poor</option>
-</select>
-
-</div>
-
-
-<button class="btn" onclick="calculatePrice()">
-GET ESTIMATED PRICE →
-</button>
-
-
-<div class="result" id="result">
-
-<h3>YOUR ESTIMATED LAPTOP VALUE</h3>
-
-<div class="price" id="price">
-₹0
-</div>
-
-<p>
-Final offer will be confirmed after physical inspection.
-</p>
-
-<button class="btn" onclick="sellLaptop()">
-SELL MY LAPTOP
-</button>
-
-</div>
-
-</section>
 
 
 <footer>
+<p>© 2026 Lappify. All Rights Reserved.</p>
 
-<div class="footer-logo">
-Lappi<span>fy</span>
+<div class="social">
+<a href="https://www.instagram.com/lappifyoffical/" target="_blank">
+Instagram
+</a>
+
+<a href="https://wa.me/918122231183" target="_blank">
+WhatsApp
+</a>
 </div>
-
-<p>
-Laptop Sales & Service
-</p>
-
-<p>
-Where Trust Meets Technology
-</p>
-
-<p>
-© 2026 Lappify. All Rights Reserved.
-</p>
-
 </footer>
 
 
 <script>
 
-function calculatePrice() {
-
-let processor =
-Number(document.getElementById("processor").value);
-
-let ram =
-Number(document.getElementById("ram").value);
-
-let storage =
-Number(document.getElementById("storage").value);
-
-let year =
-Number(document.getElementById("year").value);
-
-let condition =
-Number(document.getElementById("condition").value);
+let generatedOTP = "";
+let otpVerified = false;
 
 
-if (!processor || !year || !condition) {
+/* BRAND */
+function brandChanged(){
 
-alert("Please select all required details.");
+const brand=document.getElementById("brand").value;
+const processor=document.getElementById("processor");
+
+if(brand==="Apple"){
+
+processor.innerHTML=`
+<option value="">Select Apple Processor</option>
+<option>Apple M1</option>
+<option>Apple M2</option>
+<option>Apple M3</option>
+<option>Apple M4</option>
+<option>Apple M4 Max</option>
+<option>Apple Intel i3</option>
+<option>Apple Intel i5</option>
+<option>Apple Intel i7</option>
+<option>Apple Intel i9</option>
+`;
+
+}else{
+
+processor.innerHTML=`
+<option value="">Select Processor</option>
+<option>Intel Core i3</option>
+<option>Intel Core i5</option>
+<option>Intel Core i7</option>
+<option>Intel Core i9</option>
+<option>Intel Core Ultra 5</option>
+<option>Intel Core Ultra 7</option>
+<option>Intel Core Ultra 9</option>
+<option>AMD Ryzen 3</option>
+<option>AMD Ryzen 4</option>
+<option>AMD Ryzen 5</option>
+<option>AMD Ryzen 7</option>
+<option>AMD Ryzen 9</option>
+`;
+}
+
+}
+
+
+/* GRAPHICS */
+function graphicsChanged(){
+
+const available=document.getElementById("graphicsAvailable").value;
+const graphics=document.getElementById("graphics");
+
+if(available==="Not Available"){
+graphics.value="";
+graphics.disabled=true;
+}else{
+graphics.disabled=false;
+}
+
+}
+
+
+/* PRICE */
+function calculatePrice(){
+
+let price=0;
+
+const processor=document.getElementById("processor").value;
+const ram=document.getElementById("ram").value;
+const storage=document.getElementById("storage").value;
+const graphics=document.getElementById("graphics").value;
+const warranty=document.getElementById("warranty").value;
+const size=document.getElementById("size").value;
+
+if(processor.includes("i3") || processor.includes("Ryzen 3")) price+=7000;
+else if(processor.includes("i5") || processor.includes("Ryzen 5")) price+=12000;
+else if(processor.includes("i7") || processor.includes("Ryzen 7")) price+=18000;
+else if(processor.includes("i9") || processor.includes("Ryzen 9")) price+=25000;
+else if(processor.includes("Ultra 5")) price+=20000;
+else if(processor.includes("Ultra 7")) price+=28000;
+else if(processor.includes("Ultra 9")) price+=35000;
+else if(processor.includes("M1")) price+=22000;
+else if(processor.includes("M2")) price+=30000;
+else if(processor.includes("M3")) price+=40000;
+else if(processor.includes("M4")) price+=50000;
+
+if(ram.includes("4 GB")) price+=1000;
+if(ram.includes("6 GB")) price+=1500;
+if(ram.includes("8 GB")) price+=2500;
+if(ram.includes("12 GB")) price+=3500;
+if(ram.includes("16 GB")) price+=5000;
+if(ram.includes("32 GB")) price+=9000;
+if(ram.includes("64 GB")) price+=14000;
+
+if(storage.includes("128 GB")) price+=1000;
+if(storage.includes("250 GB")) price+=1500;
+if(storage.includes("256 GB")) price+=1800;
+if(storage.includes("320 GB")) price+=800;
+if(storage.includes("350 GB")) price+=2000;
+if(storage.includes("500 GB")) price+=1500;
+if(storage.includes("512 GB")) price+=3000;
+if(storage.includes("1 TB SSD")) price+=5000;
+if(storage.includes("2 TB SSD")) price+=9000;
+
+if(graphics.includes("GTX")) price+=5000;
+if(graphics.includes("RTX 1650")) price+=7000;
+if(graphics.includes("RTX 2050")) price+=9000;
+if(graphics.includes("RTX 3050")) price+=12000;
+if(graphics.includes("RTX 4050")) price+=18000;
+if(graphics.includes("RTX 5050")) price+=25000;
+if(graphics.includes("RX 6600")) price+=12000;
+
+if(warranty.includes("1 Year")) price+=3000;
+if(warranty.includes("3 Years Above")) price-=3000;
+
+if(size==="14 to 15 inch") price+=1000;
+if(size==="15 inch and above") price+=1500;
+
+if(document.getElementById("keyboard").value==="Not Working") price-=2000;
+if(document.getElementById("speaker").value==="Not Working") price-=500;
+if(document.getElementById("wifi").value==="Not Working") price-=1000;
+if(document.getElementById("fan").value==="Not Working") price-=1000;
+if(document.getElementById("patches").value==="Yes") price-=2500;
+if(document.getElementById("keyboardImpression").value==="Yes") price-=1000;
+if(document.getElementById("topDamage").value==="Yes") price-=1500;
+if(document.getElementById("bottomDamage").value==="Yes") price-=1500;
+if(document.getElementById("screenCondition").value!=="Normal") price-=2000;
+if(document.getElementById("charger").value==="Not Available") price-=1000;
+if(document.getElementById("box").value==="Not Available") price-=300;
+
+if(price<0) price=0;
+
+document.getElementById("estimatedPrice").innerText=
+"₹ "+price.toLocaleString("en-IN");
+
+}
+
+
+/* OTP DEMO */
+function sendOTP(){
+
+const mobile=document.getElementById("mobile").value;
+
+if(!/^[0-9]{10}$/.test(mobile)){
+alert("Please enter a valid 10 digit mobile number.");
+return;
+}
+
+generatedOTP=Math.floor(100000+Math.random()*900000).toString();
+
+document.getElementById("otpArea").classList.remove("hidden");
+
+document.getElementById("otpMessage").innerText=
+"Demo OTP: "+generatedOTP;
+
+}
+
+
+/* VERIFY OTP */
+function verifyOTP(){
+
+const otp=document.getElementById("otp").value;
+
+if(otp===generatedOTP && generatedOTP!==""){
+
+otpVerified=true;
+
+document.getElementById("otpMessage").innerText=
+"OTP Verified Successfully ✓";
+
+}else{
+
+document.getElementById("otpMessage").innerText=
+"Invalid OTP. Please try again.";
+
+}
+
+}
+
+
+/* PICKUP DATES - NEXT 4 DAYS */
+function loadDates(){
+
+const select=document.getElementById("pickupDate");
+
+select.innerHTML="";
+
+for(let i=1;i<=4;i++){
+
+const d=new Date();
+
+d.setDate(d.getDate()+i);
+
+const option=document.createElement("option");
+
+option.value=d.toISOString().split("T")[0];
+
+option.textContent=d.toLocaleDateString("en-IN",{
+weekday:"short",
+day:"2-digit",
+month:"short",
+year:"numeric"
+});
+
+select.appendChild(option);
+
+}
+
+}
+
+loadDates();
+
+
+function pickupChanged(){
+
+const type=document.getElementById("pickupType").value;
+
+if(type==="Urgent Pickup"){
+
+document.getElementById("pickupSlot").innerHTML=
+`<option>Immediate Pickup - Urgent</option>`;
+
+}else{
+
+document.getElementById("pickupSlot").innerHTML=`
+<option>10:00 AM - 12:00 PM</option>
+<option>12:00 PM - 2:00 PM</option>
+<option>2:00 PM - 4:00 PM</option>
+<option>4:00 PM - 5:00 PM</option>
+`;
+
+}
+
+}
+
+
+/* SIGNATURE */
+const canvas=document.getElementById("signatureCanvas");
+const ctx=canvas.getContext("2d");
+
+function resizeCanvas(){
+
+canvas.width=canvas.offsetWidth;
+canvas.height=180;
+
+ctx.lineWidth=2;
+ctx.lineCap="round";
+
+}
+
+resizeCanvas();
+
+let drawing=false;
+
+function getPosition(e){
+
+const rect=canvas.getBoundingClientRect();
+
+if(e.touches){
+
+return{
+x:e.touches[0].clientX-rect.left,
+y:e.touches[0].clientY-rect.top
+};
+
+}
+
+return{
+x:e.clientX-rect.left,
+y:e.clientY-rect.top
+};
+
+}
+
+function startDraw(e){
+
+drawing=true;
+
+const p=getPosition(e);
+
+ctx.beginPath();
+ctx.moveTo(p.x,p.y);
+
+e.preventDefault();
+
+}
+
+function draw(e){
+
+if(!drawing)return;
+
+const p=getPosition(e);
+
+ctx.lineTo(p.x,p.y);
+ctx.stroke();
+
+e.preventDefault();
+
+}
+
+function stopDraw(){
+
+drawing=false;
+ctx.closePath();
+
+}
+
+canvas.addEventListener("mousedown",startDraw);
+canvas.addEventListener("mousemove",draw);
+canvas.addEventListener("mouseup",stopDraw);
+canvas.addEventListener("mouseleave",stopDraw);
+
+canvas.addEventListener("touchstart",startDraw);
+canvas.addEventListener("touchmove",draw);
+canvas.addEventListener("touchend",stopDraw);
+
+
+function clearSignature(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+}
+
+
+/* REPORT */
+function generateReport(){
+
+const name=document.getElementById("customerName").value;
+const mobile=document.getElementById("mobile").value;
+
+if(!name || !mobile){
+
+alert("Please enter customer name and mobile number.");
 
 return;
 
 }
 
+const data={
 
-let basePrice = processor + ram + storage + 5000;
+"Customer Name":name,
+"Mobile":mobile,
+"Address":document.getElementById("address").value,
+"Brand":document.getElementById("brand").value,
+"Processor":document.getElementById("processor").value,
+"Generation":document.getElementById("generation").value,
+"RAM":document.getElementById("ram").value,
+"Storage":document.getElementById("storage").value,
+"Warranty":document.getElementById("warranty").value,
+"Graphics":document.getElementById("graphicsAvailable").value+
+(document.getElementById("graphics").value?
+" - "+document.getElementById("graphics").value:""),
+"Laptop Size":document.getElementById("size").value,
+"Keyboard":document.getElementById("keyboard").value,
+"Speaker":document.getElementById("speaker").value,
+"Wi-Fi":document.getElementById("wifi").value,
+"Fan":document.getElementById("fan").value,
+"Screen Patches":document.getElementById("patches").value,
+"Keyboard Impression":document.getElementById("keyboardImpression").value,
+"Top Panel Damage":document.getElementById("topDamage").value,
+"Bottom Panel Damage":document.getElementById("bottomDamage").value,
+"Screen Condition":document.getElementById("screenCondition").value,
+"Charger":document.getElementById("charger").value,
+"Box":document.getElementById("box").value,
+"Estimated Price":document.getElementById("estimatedPrice").innerText,
+"Final Price":document.getElementById("finalPrice").value,
+"Pickup Date":document.getElementById("pickupDate").value,
+"Pickup Slot":document.getElementById("pickupSlot").value,
+"Pickup Type":document.getElementById("pickupType").value,
+"Admin Notes":document.getElementById("adminNotes").value,
+"OTP Verified":otpVerified?"Yes":"No"
+};
 
-let currentYear = 2026;
+let html="";
 
-let age = currentYear - year;
+for(const key in data){
 
-let ageFactor = 1;
+html+=`
+<tr>
+<td>${key}</td>
+<td>${data[key] || "-"}</td>
+</tr>
+`;
 
-if (age == 1) ageFactor = .85;
-if (age == 2) ageFactor = .70;
-if (age == 3) ageFactor = .55;
-if (age >= 4) ageFactor = .40;
+}
 
-let finalPrice =
-basePrice * ageFactor * condition;
+document.getElementById("reportTable").innerHTML=html;
 
+document.getElementById("report").style.display="block";
 
-finalPrice =
-Math.round(finalPrice / 100) * 100;
-
-
-document.getElementById("price").innerText =
-"₹" + finalPrice.toLocaleString("en-IN");
-
-document.getElementById("result").style.display =
-"block";
+document.getElementById("report").scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
 
-function sellLaptop() {
+/* WHATSAPP */
+function sendWhatsApp(){
 
-alert(
-"Great! Your laptop sale request has been started. We will contact you shortly."
-);
+const name=document.getElementById("customerName").value;
+const finalPrice=document.getElementById("finalPrice").value ||
+document.getElementById("estimatedPrice").innerText;
+
+const message=
+"Hello "+name+
+", this is Lappify. Your laptop evaluation is completed. "+
+"Estimated/Final Price: "+finalPrice+
+". Thank you for choosing Lappify.";
+
+const url=
+"https://wa.me/918122231183?text="+
+encodeURIComponent(message);
+
+window.open(url,"_blank");
 
 }
 
 </script>
 
 </body>
-  </html>
+</html>
