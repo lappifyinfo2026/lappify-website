@@ -363,7 +363,7 @@ footer{
 </select>
 </div>
 
-<div class="field">
+<div class="field" id="generationField">
 <label>Generation / Series</label>
 <select id="generation">
 <option value="">Select Generation</option>
@@ -847,24 +847,37 @@ function brandChanged(){
 
 const brand=document.getElementById("brand").value;
 const processor=document.getElementById("processor");
-
+const generationField=document.getElementById("generationField");
 if(brand==="Apple"){
-
+generationField.style.display="none";
 processor.innerHTML=`
 <option value="">Select Apple Processor</option>
-<option>Apple M1</option>
-<option>Apple M2</option>
-<option>Apple M3</option>
-<option>Apple M4</option>
-<option>Apple M4 Max</option>
-<option>Apple Intel i3</option>
-<option>Apple Intel i5</option>
-<option>Apple Intel i7</option>
-<option>Apple Intel i9</option>
+<option>M1</option>
+<option>M1 Air</option>
+<option>M1 Pro</option>
+<option>M2</option>
+<option>M2 Air</option>
+<option>M2 Pro</option>
+<option>M3</option>
+<option>M3 Air</option>
+<option>M3 Pro</option>
+<option>M4</option>
+<option>M4 Air</option>
+<option>M4 Pro</option>
+<option>Intel i5</option>
+<option>Intel i5 Air</option>
+<option>Intel i5 Pro</option>
+<option>Intel i7</option>
+<option>Intel i7 Air</option>
+<option>Intel i7 Pro</option>
+<option>Intel i9</option>
+<option>Intel i9 Air</option>
+<option>Intel i9 Pro</option>
+
 `;
 
 }else{
-
+generationField.style.display="block";
 processor.innerHTML=`
 <option value="">Select Processor</option>
 <option>Intel Core i3</option>
