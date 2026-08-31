@@ -1015,10 +1015,10 @@ const graphics=document.getElementById("graphics").value;
 const warranty=document.getElementById("warranty").value;
 const size=document.getElementById("size").value;
 
-if(processor.includes("i3") || processor.includes("Ryzen 3")) price+=7000;
-else if(processor.includes("i5") || processor.includes("Ryzen 5")) price+=12000;
-else if(processor.includes("i7") || processor.includes("Ryzen 7")) price+=18000;
-else if(processor.includes("i9") || processor.includes("Ryzen 9")) price+=25000;
+if(processor.includes("i3") || processor.includes("Ryzen 3")) price+=5000;
+else if(processor.includes("i5") || processor.includes("Ryzen 5")) price+=9000;
+else if(processor.includes("i7") || processor.includes("Ryzen 7")) price+=15000;
+else if(processor.includes("i9") || processor.includes("Ryzen 9")) price+=21000;
 else if(processor.includes("Ultra 5")) price+=20000;
 else if(processor.includes("Ultra 7")) price+=28000;
 else if(processor.includes("Ultra 9")) price+=35000;
@@ -1056,8 +1056,8 @@ if(graphics.includes("RX 6600")) price+=12000;
 if(warranty.includes("1 Year")) price+=6000;
 if(warranty.includes("3 Years Above")) price-=4000;
 
-if(size==="14 to 15 inch") price+=1000;
-if(size==="15 inch and above") price+=1500;
+if(size==="14 to 15 inch") price+=700;
+if(size==="15 inch and above") price+=1000;
 
 if(document.getElementById("keyboard").value==="Not Working") price-=1800;
 if(document.getElementById("speaker").value==="Not Working") price-=900;
