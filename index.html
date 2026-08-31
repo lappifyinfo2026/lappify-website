@@ -952,6 +952,7 @@ processor.innerHTML=`
 <option>M4</option>
 <option>M4 Air</option>
 <option>M4 Pro</option>
+<option>M5 Air</option>
 <option>Intel i5</option>
 <option>Intel i5 Air</option>
 <option>Intel i5 Pro</option>
@@ -1026,23 +1027,23 @@ else if(processor.includes("M2")) price+=30000;
 else if(processor.includes("M3")) price+=40000;
 else if(processor.includes("M4")) price+=50000;
 
-if(ram.includes("4 GB")) price+=1000;
-if(ram.includes("6 GB")) price+=1500;
+if(ram.includes("4 GB")) price+=1200;
+if(ram.includes("6 GB")) price+=1600;
 if(ram.includes("8 GB")) price+=2500;
 if(ram.includes("12 GB")) price+=3500;
 if(ram.includes("16 GB")) price+=5000;
 if(ram.includes("32 GB")) price+=9000;
 if(ram.includes("64 GB")) price+=14000;
 
-if(storage.includes("128 GB")) price+=1000;
-if(storage.includes("250 GB")) price+=1500;
-if(storage.includes("256 GB")) price+=1800;
+if(storage.includes("128 GB")) price+=1300;
+if(storage.includes("250 GB")) price+=1800;
+if(storage.includes("256 GB")) price+=2100;
 if(storage.includes("320 GB")) price+=800;
 if(storage.includes("350 GB")) price+=2000;
 if(storage.includes("500 GB")) price+=1500;
-if(storage.includes("512 GB")) price+=3000;
-if(storage.includes("1 TB SSD")) price+=5000;
-if(storage.includes("2 TB SSD")) price+=9000;
+if(storage.includes("512 GB")) price+=3500;
+if(storage.includes("1 TB SSD")) price+=7000;
+if(storage.includes("2 TB SSD")) price+=12000;
 
 if(graphics.includes("GTX")) price+=5000;
 if(graphics.includes("RTX 1650")) price+=7000;
@@ -1052,21 +1053,21 @@ if(graphics.includes("RTX 4050")) price+=18000;
 if(graphics.includes("RTX 5050")) price+=25000;
 if(graphics.includes("RX 6600")) price+=12000;
 
-if(warranty.includes("1 Year")) price+=3000;
-if(warranty.includes("3 Years Above")) price-=3000;
+if(warranty.includes("1 Year")) price+=6000;
+if(warranty.includes("3 Years Above")) price-=4000;
 
 if(size==="14 to 15 inch") price+=1000;
 if(size==="15 inch and above") price+=1500;
 
-if(document.getElementById("keyboard").value==="Not Working") price-=2000;
+if(document.getElementById("keyboard").value==="Not Working") price-=1800;
 if(document.getElementById("speaker").value==="Not Working") price-=900;
 if(document.getElementById("wifi").value==="Not Working") price-=1200;
 if(document.getElementById("fan").value==="Not Working") price-=1300;
-if(document.getElementById("patches").value==="Yes") price-=2500;
+if(document.getElementById("patches").value==="Yes") price-=2200;
 if(document.getElementById("keyboardImpression").value==="Yes") price-=1200;
-if(document.getElementById("topDamage").value==="Yes") price-=1500;
-if(document.getElementById("bottomDamage").value==="Yes") price-=1500;
-if(document.getElementById("hinges").value==="Yes") price-=2000;
+if(document.getElementById("topDamage").value==="Yes") price-=1300;
+if(document.getElementById("bottomDamage").value==="Yes") price-=1300;
+if(document.getElementById("hinges").value==="Yes") price-=1500;
 if(document.getElementById("charger").value==="Not Available") price-=1200;
 if(document.getElementById("box").value==="Not Available") price-=400;
 
