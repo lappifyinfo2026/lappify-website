@@ -1081,43 +1081,61 @@ document.getElementById("estimatedPrice").innerText=
 
 /* OTP DEMO */
 function sendOTP(){
+  const mobile = document.getElementById("mobile").value.trim();
 
-const mobile=document.getElementById("mobile").value;
+  if(!/^[0-9]{10}$/.test(mobile)){
+    alert("Please enter a valid 10 digit mobile number.");
+    return;
+  }
 
-if(!/^[0-9]{10}$/.test(mobile)){
-alert("Please enter a valid 10 digit mobile number.");
-return;
+  if(typeof window.sendOtp !== "function"){
+    alert("OTP service is not ready. Please try again.");
+    return;
+  }
+
+  window.sendOtp(
+    "91" + mobile,
+    function(data){
+      document.getElementById("otpArea").classList.remove("hidden");
+      document.getElementById("otpMessage").innerText =
+        "OTP sent successfully. Please enter the OTP.";
+      console.log("OTP sent successfully", data);
+    },
+    function(error){
+      console.log("OTP send failed", error);
+      alert("Unable to send OTP. Please try again.");
+    }
+  );
 }
 
-generatedOTP=Math.floor(100000+Math.random()*900000).toString();
-
-document.getElementById("otpArea").classList.remove("hidden");
-
-document.getElementById("otpMessage").innerText=
-"Demo OTP: "+generatedOTP;
-
-}
 
 
 /* VERIFY OTP */
 function verifyOTP(){
+  const otp = document.getElementById("otp").value.trim();
 
-const otp=document.getElementById("otp").value;
+  if(!/^[0-9]{4,6}$/.test(otp)){
+    alert("Please enter the OTP.");
+    return;
+  }
 
-if(otp===generatedOTP && generatedOTP!==""){
+  if(typeof window.verifyOtp !== "function"){
+    alert("OTP service is not ready. Please try again.");
+    return;
+  }
 
-otpVerified=true;
-
-document.getElementById("otpMessage").innerText=
-"OTP Verified Successfully ✓";
-
-}else{
-
-document.getElementById("otpMessage").innerText=
-"Invalid OTP. Please try again.";
-
-}
-
+  window.verifyOtp(
+    otp,
+    function(data){
+      document.getElementById("otpMessage").innerText =
+        "Mobile number verified successfully.";
+      console.log("OTP verified successfully", data);
+    },
+    function(error){
+      console.log("OTP verification failed", error);
+      alert("Invalid OTP. Please try again.");
+    }
+  );
 }
 
 
@@ -1361,6 +1379,23 @@ window.open(url,"_blank");
 
 </script>
 
-<script src="https://verify.msg91.com/otp-provider.js"></script>
+<script type="text/javascript">
+  var configuration = {
+    widgetId: "366844714e74303532363638",
+    tokenAuth: "565983TyzytoooW2W6a946f26P1",
+    
+    exposeMethods: true,
+    captchaRenderId: '', // id(must be unique) of html element where to render captcha, only works if there is exposedMethod is true,.
+    success: (data) => {
+        // get verified token in response
+        console.log('success response', data);
+    },
+    failure: (error) => {
+        // handle error
+        console.log('failure reason', error);
+    },
+
+};
+</script>
+ <script type="text/javascript" onload="initSendOTP(configuration)" src="https://verify.msg91.com/otp-provider.js"></script>
 </body>
-</html>
