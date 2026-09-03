@@ -1133,6 +1133,7 @@ function verifyOTP(){
     function(data){
       document.getElementById("otpMessage").innerText =
         "Mobile number verified successfully.";
+      otpVerified = true;
       console.log("OTP verified successfully", data);
     },
     function(error){
