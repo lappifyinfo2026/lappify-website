@@ -758,7 +758,11 @@ Estimated Price
 <strong>Service Area:</strong> Chennai only.
 Normal pickup slots are within the selected time window.
 </p>
-
+<div class="actions">
+  <button class="btn btn-primary" onclick="submitCustomerRequest()">
+    Submit Pickup Request
+  </button>
+</div>
 </section>
 
 
@@ -1146,7 +1150,7 @@ const select=document.getElementById("pickupDate");
 
 select.innerHTML="";
 
-for(let i=1;i<=4;i++){
+for(let i=0;i<4;i++){
 
 const d=new Date();
 
@@ -1320,7 +1324,8 @@ const data={
 "Keyboard Impression":document.getElementById("keyboardImpression").value,
 "Top Panel Damage":document.getElementById("topDamage").value,
 "Bottom Panel Damage":document.getElementById("bottomDamage").value,
-"Screen Condition":document.getElementById("screenCondition").value,
+"Fixed Pickup Date":document.getElementById("pickupDate").value,
+"Loose Hinges":document.getElementById("hinges").value,
 "Charger":document.getElementById("charger").value,
 "Box":document.getElementById("box").value,
 "Estimated Price":document.getElementById("estimatedPrice").innerText,
