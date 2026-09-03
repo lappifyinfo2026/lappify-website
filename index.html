@@ -1331,7 +1331,30 @@ const data={
 "Admin Notes":document.getElementById("adminNotes").value,
 "OTP Verified":otpVerified?"Yes":"No"
 };
+const sheetData = {
+  customerName: data["Customer Name"],
+  mobile: data["Mobile"],
+  address: data["Address"],
+  brand: data["Brand"],
+  processor: data["Processor"],
+  generation: data["Generation"],
+  condition: "Laptop evaluation submitted",
+  estimatedPrice: data["Estimated Price"],
+  pickupType: data["Pickup Type"],
+  pickupDate: data["Pickup Date"],
+  otpVerified: data["OTP Verified"]
+};
 
+fetch("https://script.google.com/macros/s/AKfycbzNhdOdKLgoEWe2XSull7y7bMEke_OO05i89krRYcMAflnUUWUmUfwKENlxaXJW61ib/exec", {
+  method: "POST",
+  body: JSON.stringify(sheetData)
+})
+.then(() => {
+  console.log("Customer saved to Google Sheet");
+})
+.catch(error => {
+  console.log("Google Sheet error", error);
+});
 let html="";
 
 for(const key in data){
