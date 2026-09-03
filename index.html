@@ -1323,7 +1323,7 @@ const pickupSlot = document.getElementById("pickupSlot").value;
     status: "New Pickup Request"
   };
 
-  fetch("PASTE_THE_SAME_GOOGLE_APPS_SCRIPT_URL_HERE", {
+   fetch("https://script.google.com/macros/s/AKfycbzNhdOdKLgoEWe2XSull7y7bMEke_OO05i89krRYcMAflnUUWUmUfwKENlxaXJW61ib/exec", { 
     method: "POST",
     body: JSON.stringify(pickupData)
   })
